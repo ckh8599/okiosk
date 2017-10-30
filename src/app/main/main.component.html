@@ -1,16 +1,17 @@
 <mat-grid-list cols="4" rowHeight="100px">
   <mat-grid-tile [colspan]="4" [rowspan]="1">
-
+    <img src="http://www.spc.co.kr/resources/images/p5/image/main_back.png" />
   </mat-grid-tile>
   <mat-grid-tile [colspan]="3" [rowspan]="6">
     <mat-tab-group>
       <mat-tab label="버거">
         <mat-card>ㄴㅇㄹㄴㅇㄹ</mat-card>
         <mat-card>ㄴㅇㄹㄴㅇㄹ</mat-card>
-
+        <button mat-button (click)="onClick()" >셋트</button>
       </mat-tab>
       <mat-tab label="김밥">
-          <mat-card>Simple card</mat-card>
+        <mat-card>ㄴㅇㄹㄴㅇㄹ</mat-card>
+        <mat-card>ㄴㅇㄹㄴㅇㄹ</mat-card>
       </mat-tab>
       <mat-tab label="분식">
           <mat-card>Simple card</mat-card>
@@ -20,7 +21,7 @@
       </mat-tab>
     </mat-tab-group>
   </mat-grid-tile>
-  <mat-grid-tile [colspan]="1" [rowspan]="6">
-
+  <mat-grid-tile [colspan]="1" [rowspan]="6" style="text-align: left">
+    <mat-card></mat-card>
   </mat-grid-tile>
 </mat-grid-list>

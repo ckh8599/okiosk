@@ -18,4 +18,7 @@ export class MainComponent implements OnInit {
   ngOnInit() {
   }
 
+  onClick(){
+    console.log('sdflksjdf....');
+  }
 }
