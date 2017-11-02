@@ -1,10 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
+import { NgModule, ErrorHandler, Injectable } from '@angular/core';
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpErrorResponse } from '@angular/common/http';
+import { ErrorLogService } from './service/errorlog.service';
 
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
         MatAutocompleteModule,
         MatButtonModule,
@@ -38,7 +39,7 @@ import {
         MatTooltipModule,
         MatStepperModule,
       } from '@angular/material';
-
+      
 @NgModule({
   declarations: [
     AppComponent,
@@ -79,7 +80,9 @@ import {
     MatTooltipModule,
     MatStepperModule
   ],
-  providers: [],
+  providers: [
+    {provide: ErrorHandler, useClass: ErrorLogService}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
