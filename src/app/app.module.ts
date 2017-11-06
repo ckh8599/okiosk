@@ -5,6 +5,8 @@ import { MainComponent } from './main/main.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpErrorResponse } from '@angular/common/http';
 import { ErrorLogService } from './service/errorlog.service';
+import { environment } from './../environments/environment';
+import { HttpClientModule } from '@angular/common/http';
 
 import {
         MatAutocompleteModule,
@@ -78,7 +80,9 @@ import {
     MatTabsModule,
     MatToolbarModule,
     MatTooltipModule,
-    MatStepperModule
+    MatStepperModule,
+
+    HttpClientModule,
   ],
   providers: [
     {provide: ErrorHandler, useClass: ErrorLogService}
