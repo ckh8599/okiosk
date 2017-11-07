@@ -5,6 +5,7 @@ import {HttpErrorResponse} from '@angular/common/http';
 @Injectable()
 export class ErrorLogService implements ErrorHandler {
   handleError(error) {
-    alert(error);
+    // alert(error);
+    // console.error(error);
   }
 }

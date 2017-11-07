@@ -7,6 +7,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { ErrorLogService } from './service/errorlog.service';
 import { environment } from './../environments/environment';
 import { HttpClientModule } from '@angular/common/http';
+import { HttpService } from './service/http.service';
 
 import {
         MatAutocompleteModule,
@@ -83,9 +84,11 @@ import {
     MatStepperModule,
 
     HttpClientModule,
+    
   ],
   providers: [
-    {provide: ErrorHandler, useClass: ErrorLogService}
+    // {provide: ErrorHandler, useClass: ErrorLogService}
+    HttpService
   ],
   bootstrap: [AppComponent]
 })

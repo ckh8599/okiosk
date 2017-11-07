@@ -1,19 +1,28 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
+/**
+ * HTTP 서비스를 구현
+ */
 @Injectable()
 export class HttpService {
 
-  results: string[];
+  private results: string[];
+
+  public get resurts(){
+    return this.results;
+  }
 
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
+    console.log('HttpService.ngOnInit -- !');
     // Make the HTTP request:
-    this.http.post<ItemsResponse>('/api/items','').subscribe(
+    this.http.get<ItemsResponse>('http://tb.caap.co.kr:8080/jsonTest.do').subscribe(
       data => {
         // Read the result field from the JSON response.
         this.results = data.results;
+        console.log('this.results == ' + this.results.toString());
       },
       (err : HttpErrorResponse) => {
         if (err.error instanceof Error) {

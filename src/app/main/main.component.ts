@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpService } from '../service/http.service';
 
 @Component({
   selector: 'app-main',
@@ -7,11 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
-  constructor() { }
+  private results: string[];
+
+  constructor(private httpService : HttpService) { 
+    
+  }
 
   ngOnInit() {
   }
 
   onClick(){
+  }
+
+  sendPayment(): void {
+    this.httpService.ngOnInit();
+    this.results = this.httpService.resurts;
   }
 }
