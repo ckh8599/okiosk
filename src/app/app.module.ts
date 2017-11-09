@@ -8,6 +8,8 @@ import { ErrorLogService } from './service/errorlog.service';
 import { environment } from './../environments/environment';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpService } from './service/http.service';
+import { StorageService } from './service/storage.service';
+import { AsyncLocalStorageModule } from 'angular-async-local-storage';
 
 import {
         MatAutocompleteModule,
@@ -84,11 +86,13 @@ import {
     MatStepperModule,
 
     HttpClientModule,
+    AsyncLocalStorageModule,
     
   ],
   providers: [
     // {provide: ErrorHandler, useClass: ErrorLogService}
-    HttpService
+    HttpService,
+    StorageService,
   ],
   bootstrap: [AppComponent]
 })

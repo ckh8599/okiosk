@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { StorageService } from './storage.service';
 
 /**
  * HTTP 서비스를 구현
@@ -13,8 +14,8 @@ export class HttpService {
     return this.results;
   }
 
-  constructor(private http: HttpClient) { }
-
+  constructor(private http: HttpClient, storageService: StorageService) { }
+  
   ngOnInit(): void {
     console.log('HttpService.ngOnInit -- !');
     // Make the HTTP request:
